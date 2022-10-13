@@ -9,5 +9,8 @@ print(results.xyxy[0], results.xyxy[0][0][0].item())  # img1 predictions (tensor
 print(results.pandas().xyxy[0])  # img1 predictions (pandas)
 
 tmp_img = cv2.imread('test.jpg')
-cv2.rectangle(tmp_img, (int(results.xyxy[0][0][0].item()), int(results.xyxy[0][0][1].item())), (int(results.xyxy[0][0][2].item()), int(results.xyxy[0][0][3].item())), (255,255,255))
+cv2.rectangle(tmp_img, (int(results.xyxy[0][0][0].item()), int(results.xyxy[0][0][1].item())), (int(results.xyxy[0][0][2].item()), int(results.xyxy[0][0][3].item())), (0,0,255))
+print(results.xyxy[0][0][0].item())
+print(results.xyxy[0][0][1].item())
+
 cv2.imwrite('result.png', tmp_img)
